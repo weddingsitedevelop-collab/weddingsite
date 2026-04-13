@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wedding Invitation</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("bg.png") no-repeat center center/cover;
+        opacity: 0.5; /* adjust here */
+        z-index: -1;
+      }
+
+      /* SECTION */
+      .section {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        background: rgba(255, 255, 255, 0.6);
+      }
+
+      .image-title 
+      {
+        width: 50px;
+      }
+
+      /* SAVE THE DATE */
+      .save-title {
+        letter-spacing: 4px;
+        color: #6a1b9a;
+        font-weight: 600;
+        margin-bottom: 20px;
+        animation: fadeDown 1s ease;
+      }
+
+      /* FLOWER CONTAINER */
+      .flower-container {
+        position: relative;
+        display: inline-block;
+      }
+
+      /* FLOWER IMAGE */
+      .flower {
+        width: 350px;
+        animation: rotateFlower 10s linear infinite;
+        filter: hue-rotate(260deg) saturate(1.2);
+      }
+
+      /* NAMES INSIDE IMAGE */
+      .names {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-family: "Great Vibes", cursive;
+        font-size: 32px;
+        color: #6a1b9a;
+        pointer-events: none;
+        font-weight: bold;
+      }
+
+      /* DATE */
+      .date {
+        color: #6a1b9a;
+        font-size: 18px;
+        margin-top: 10px;
+        animation: fadeUp 1.4s ease;
+      }
+
+      /* EVENT TITLE */
+      .event-title {
+        font-size: 26px;
+        color: #6a1b9a;
+        font-weight: 600;
+      }
+
+      /* LINE + HEART */
+      .line {
+        width: 2px;
+        height: 50px;
+        background: #c33;
+        margin: 10px auto;
+        animation: grow 1s ease;
+      }
+
+      .heart {
+        font-size: 20px;
+        color: red;
+        animation: pulse 1.5s infinite;
+      }
+
+      /* IMAGE CARD */
+      .card {
+        margin: 20px 0;
+        padding: 10px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        transform: scale(0.8);
+        opacity: 0;
+        transition: 0.6s;
+      }
+
+      .card.show {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      .card img {
+        width: 250px;
+        border-radius: 6px;
+      }
+
+      /* TEXT */
+      .event-name {
+        font-family: "Great Vibes", cursive;
+        font-size: 32px;
+        color: #6a1b9a;
+        font-weight: bold;
+      }
+
+      .details {
+        color: #6a1b9a;
+        margin: 8px 0;
+        letter-spacing: 2px;
+      }
+
+      /* MAP BUTTON */
+      .map-btn {
+        margin-top: 20px;
+        padding: 10px 25px;
+        border-radius: 25px;
+        border: none;
+        background: #6a1b9a;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .map-btn:hover {
+        background: #8522c2;
+        transform: scale(1.05);
+      }
+
+      /* THANK YOU */
+      .thank {
+        font-size: 26px;
+        color: #fff;
+        text-align: center;
+      }
+
+      .footer {
+        background: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        padding: 40px 0;
+      }
+
+      /* ANIMATIONS */
+      @keyframes fadeDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes grow {
+        from {
+          height: 0;
+        }
+        to {
+          height: 50px;
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+      }
+
+      /* ROTATION */
+      @keyframes rotateFlower {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- SAVE THE DATE -->
+    <section class="section">
+      <img class="image-title" src="ganapathi.png" alt="">
+      <div class="save-title">SAVE THE DATE</div>
+
+      <div class="flower-container">
+        <img src="flower.png" class="flower" />
+        <div class="names">Soorya<br />❤️<br />Aravind</div>
+      </div>
+
+      <div class="date">12 | May | 2026</div>
+    </section>
+
+    <!-- EVENT DETAILS -->
+    <section class="section">
+      <div class="event-title">Event Details</div>
+
+      <div class="line"></div>
+      <div class="heart">♡</div>
+
+      <div class="card" id="card">
+        <img src="reception_hall.jpg" />
+      </div>
+
+      <div class="event-name">Reception</div>
+      <div class="details">12/05/2026</div>
+      <div class="details">6:00 PM - 9:30 PM</div>
+      <div class="details">Bolgatty Event Centre</div>
+      <div class="details">Lulu International Convention Center, Ernakulam</div>
+
+      <button class="map-btn" onclick="openMap()">Map</button>
+    </section>
+
+    <!-- THANK YOU -->
+    <section class="footer">
+      <div class="thank">Thank you</div>
+      <div style="color: #fff; margin-top: 10px; text-align: center">
+        - Aravind ❤️ Soorya
+      </div>
+    </section>
+
+    <script>
+      // Scroll animation
+      window.addEventListener("scroll", function () {
+        let card = document.getElementById("card");
+        let pos = card.getBoundingClientRect().top;
+        let screen = window.innerHeight;
+
+        if (pos < screen - 100) {
+          card.classList.add("show");
+        }
+      });
+
+      // Map link
+      function openMap() {
+        window.open("https://maps.google.com/?q=Bolgatty Event Centre");
+      }
+    </script>
+  </body>
+</html>
